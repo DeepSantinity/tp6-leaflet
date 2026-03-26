@@ -41,6 +41,19 @@ function onMapClick(e) {
         .openOn(map);
 }
 
-map.on('click', onMapClick);</script>
+map.on('click', onMapClick);
+
+
+var circle = L.circle([35.6895, 139.6917], {
+    color: 'red',
+    fillColor: '#f03',
+    fillOpacity: 0.5,
+    radius: 500
+}).addTo(map);
+
+
+</script>
+
+
 </body>
 </html>
