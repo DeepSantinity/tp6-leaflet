@@ -97,5 +97,29 @@ var greenIcon = L.icon({
 <script>
     L.marker([51.5, -0.09], {icon: greenIcon}).addTo(map);
 </script>
+
+
+<script>
+var geojsonFeature = {
+    "type": "Feature",
+    "properties": {
+        "name": "Coors Field",
+        "amenity": "Baseball Stadium",
+        "popupContent": "This is where the Rockies play!"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [-104.99404, 39.75621]
+    }
+};
+</script>
+<script>
+  L.geoJSON(geojsonFeature).addTo(map);
+</script>
+<script>
+var coords = geojsonFeature.geometry.coordinates;
+var marker = L.marker([coords[1], coords[0]]).addTo(map);
+marker.bindPopup("Usted está aquí").openPopup();
+</script>
 </body>
 </html>
